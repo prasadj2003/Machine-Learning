@@ -18,9 +18,11 @@ m = X.shape[0]
 print(f"Number of samples (m): {m}")
 
 # Gradient Descent Function
-def gradient_descent(X, y, w, b, m, alpha, epochs=1000):
+def gradient_descent(X, y, w, b, m, alpha, epochs=10):
     for i in range(epochs):
         y_pred = w * X.flatten() + b  # Predictions
+        print(f"type of y: {type(y_pred)}")
+        print(y_pred)
 
         # Compute gradients using np.dot
         dj_dw = (1/m) * np.dot(X.flatten(), (y_pred - y))  # Equivalent to summing element-wise
